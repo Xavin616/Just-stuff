@@ -1,0 +1,16 @@
+{% extends 'blog/layout.html' %}
+
+
+{% block title %}
+    {{blog.topic}}
+{% endblock title %}
+    
+
+{% block body %}
+<h3 class="display-4" style="padding-bottom: 10px; width: auto;">{{blog.topic}}</h3>
+    <main class="jumbotron" id="content">
+            <h5 style="font-family: 'Times New Roman', Times, serif;">{{blog.body|safe}}</h5>
+    </main> 
+                  
+{% endblock body %}
+    

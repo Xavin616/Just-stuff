@@ -1,0 +1,27 @@
+{% extends 'blog/layout.html' %}
+
+
+{% block title %}
+    Just Stuff!
+{% endblock title %}
+    
+
+{% block body %}
+    <div class="row">
+        {% for blog in blogs %}
+                <div class="col-lg-3">
+                    <div class="card border-secondary mb-3" style="max-width: 18rem;">
+                        <img class="card-img-top" src="{{blog.image.url}}" alt="Card image cap">
+                        <a href="{% url 'blog' blog.id %}" style="color: white;">
+                            <div class="card-body text-secondary">
+                                <h5 class="card-title text-dark" style="text-decoration: 2px yellow underline;">{{blog.topic}}</h5>
+                            </div>
+                            <div class="card-footer text-dark"><small>{{blog.author}}</small></div>
+                        </a>
+                    </div>
+                </div>
+        {% endfor %}
+    </div>
+        
+{% endblock body %}
+    
